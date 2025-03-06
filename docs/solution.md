@@ -17,6 +17,8 @@ Write a brief note on **any 5 of the following** (give examples/diagrams where a
 6. Referential Integrity
 7. Database keys
 
+## Answer 1
+
 ## Question 2 (20 marks)
 
 Using the bakery data Dataset spreadsheet, create charts that describe relationships the data.
@@ -35,27 +37,41 @@ A table (relation) is subject to a number of rules/conditions. What are these?
 
 Given the following tables what are the field names, data types, primary keys/Foreign Key. Some to the data will be subject to the following properties: validation rules, default values or required. Indicate which data is subject to those properties and what might they be. Use blank template table below the data.
 
+### Question 3.B.1
+
 **Dog** table
 
-| **DogID**     | **Name** | **DateOfBirth** | **Owner**  | **Breed** | **OwnerContact** |
-|:--------------|:---------|:----------------|:-----------|:----------|:-----------------|
-| 1             | Ben      | 01/01/10        | Jim Brady  | Poodle    | 087-654654       |
-| 2             | Spot     | 01/01/07        | Paul Smith | Boxer     | 086-111111       |
-| 3             | Ruth     | 06/11/09        | Mary Jones | Terrier   | 085-154545       |
+| **DogID** | **Name** | **DateOfBirth** | **Owner**  | **Breed** | **OwnerContact** |
+|:----------|:---------|:----------------|:-----------|:----------|:-----------------|
+| 1         | Ben      | 01/01/10        | Jim Brady  | Poodle    | 087-654654       |
+| 2         | Spot     | 01/01/07        | Paul Smith | Boxer     | 086-111111       |
+| 3         | Ruth     | 06/11/09        | Mary Jones | Terrier   | 085-154545       |
+
+### Answer 3.B.1
+
+Entity/Attribute (Table/field)
+
+| **EntityName** | **AttributeName** | **Data Type** | **Size** | **Null/Not Null** | **Constraint** |
+|:---------------|:------------------|:--------------|:---------|:------------------|:---------------|
+|                | DogID             | integer       | 11       | Not null          | Primary key    |
+|                |                   |               |          |                   |                |
+|                |                   |               |          |                   |                |
+|                |                   |               |          |                   |                |
+|                | OwnerContact      | VarChar       | 10       |        Not null           |                |
+
+### Question 3.B.2
 
 *Table 1:*
 
 **DogGrooming** table
 
-| **Grooming**    | **DogID** | **Date** | **Time** | **Where** | **Fee** | **Paid** | **Groomer** |
-|:----------------|:----------|:---------|:---------|:----------|:--------|:---------|:------------|
-| Shampoo         | 1         | 01/05/14 | 11:00    | Office    | €25     | Yes      | Marie       |
-| Hair trim       | 2         | 01/05/14 | 12:00    | Home      | €35     | No       | Glen        |
-| De-Shedding     | 1         | 02/05/14 | 10:00    | Office    | €45     | Yes      | Marie       |
+| **Grooming** | **DogID** | **Date** | **Time** | **Where** | **Fee** | **Paid** | **Groomer** |
+|:-------------|:----------|:---------|:---------|:----------|:--------|:---------|:------------|
+| Shampoo      | 1         | 01/05/14 | 11:00    | Office    | €25     | Yes      | Marie       |
+| Hair trim    | 2         | 01/05/14 | 12:00    | Home      | €35     | No       | Glen        |
+| De-Shedding  | 1         | 02/05/14 | 10:00    | Office    | €45     | Yes      | Marie       |
 
-# **Meta-Data**
-
-Document **ALL** your **entity/attributes** from the above two tables with the following format:
+### Answer 3.B.2
 
 Entity/Attribute (Table/field)
 
