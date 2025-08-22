@@ -1,0 +1,2 @@
+# Use Pandoc to track changes in .docx files
+*.docx diff=pandoc

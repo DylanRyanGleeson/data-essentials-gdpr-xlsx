@@ -156,7 +156,7 @@ erDiagram
         string Phone
     }
     GP {
-        int GPID PK
+        int GpId PK
         string Name
         string Specialty
         int RoomID FK
@@ -174,7 +174,7 @@ erDiagram
         date Date
         time Time
         int PatientID FK
-        int GPID FK
+        int GpId FK
         int SecretaryID FK
     }
     HOUSE_CALL {
@@ -182,7 +182,7 @@ erDiagram
         date Date
         time Time
         string Address
-        int GPID FK
+        int GpId FK
         int PatientID FK
     }
     LAB_TEST {
@@ -210,7 +210,7 @@ erDiagram
         int SampleID FK
         string Result
         string Status
-        int GPID FK
+        int GpId FK
     }
     STORE {
         int StoreID PK
@@ -279,23 +279,23 @@ erDiagram
 ```mermaid
 erDiagram
     PATIENT {
-        int PatientID PK
+        int PatientId PK
         string Name
         string Address
         string Phone
     }
     GP {
-        int GPID PK
+        int GpId PK
         string Name
         string Specialty
     }
     ROOM {
-        int RoomID PK
+        int RoomId PK
         string RoomNumber
-        int GPID FK
+        int GpId FK
     }
     SECRETARY {
-        int SecretaryID PK
+        int SecretaryId PK
         string Name
     }
     APPOINTMENT {
@@ -304,7 +304,7 @@ erDiagram
         time Time
         string DoctorNotes
         int PatientID FK
-        int GPID FK
+        int GpId FK
         int SecretaryID FK
     }
     HOUSE_CALL {
@@ -313,13 +313,13 @@ erDiagram
         time Time
         string Address
         string DoctorNotes
-        int GPID FK
+        int GpId FK
         int PatientID FK
     }
 
     PATIENT ||--o{ APPOINTMENT : books
-    GP ||--o{ APPOINTMENT : attends
     SECRETARY ||--o{ APPOINTMENT : schedules
+    GP ||--o{ APPOINTMENT : attends
     GP ||--o{ HOUSE_CALL : performs
     PATIENT ||--o{ HOUSE_CALL : receives
     GP ||--o{ ROOM : assigned
@@ -332,7 +332,7 @@ erDiagram
     SAMPLE {
         int SampleID PK
         date DateTaken
-        int TestID FK
+        int LabTestId FK
         int PatientID FK
         int AdminID FK
     }
@@ -354,7 +354,7 @@ erDiagram
         int SampleID FK
         string Result
         string Status
-        int GPID FK
+        int GpId FK
     }
 
     PATIENT ||--o{ SAMPLE : provides
@@ -371,14 +371,14 @@ Hint: Think very carefully about what needs to be recorded. Note that some of th
 
 Moylish Medical Centre is a fast-growing medical practice based on the north side of Limerick city. It provides medical services for a large number of private clients (patients) and for a number of General Practitioners (G.P.s) in the city.
 
-The procedure would be for private clients to come in as per a normal GP practice, for medical check-ups and advise. The client typically rings up the center and makes an appointment to meet one of our six full-time GP’s with the centres two secretaries. The GP assesses the client in the center and will administer the appropriate course of medical care/treatment.
+The procedure would be for private **clients** to come in as per a normal GP practice, for **medical check-ups and advise**. The client typically rings up the center and makes an **appointment** to meet one of our six full-time **GP’s** with the centre's two secretaries. The GP *assesses* the client in the center and will administer the appropriate course of medical *care/treatment*.
 
-Sometimes a GP has to make a house call. Again details of this visit need to be recorded.
+Sometimes a GP has to make a **house call**. Again details of this **visit** need to be recorded.
 
-The medical center recently began to offer a small number of medical tests in its newly built biochemistry and hematology laboratory. Demand has been such that they now are offering a large number of biochemistry tests and a small number of core hematology tests. Screening tests for the centers patients are carried out at this laboratory as well as for a number of other GP practices in the area. The samples have to be labeled appropriately by an administration person in the center and are then passed on to the two biochemists who prepare and analyse the specimens and present the findings to the GP’s (if abnormal) or to the administration person to enter in the patients file (if normal).
+The medical center recently began to offer a small number of medical tests in its newly built biochemistry and hematology laboratory. Demand has been such that they now are offering a large number of **biochemistry tests** and a small number of core **hematology tests**. **Screening tests** for the centers patients are carried out at this **laboratory** as well as for a number of other GP practices in the area. The **samples** have to be labeled appropriately by an **administration person** in the center and are then passed on to the two **biochemists** who `prepare and analyse` the **specimens** and present the `findings` to the GP’s (if abnormal) or to the administration person to enter in the patients file (if normal).
 
-Each GP is assigned their own room. The Centre employs contract cleaning services to keep the place hygienically clean. They do their work when the centre is closed.
+Each GP is assigned their own **room**. The Centre employs contract **cleaning services** to keep the place hygienically `clean`. They do their work when the centre is closed.
 
-Storing of the medical goods is another problem. A store manager who tries to keep the current stocks within its best before date runs the store. He also tries to minimise the stock held at any given time while ensuring that there is sufficient stock on hand to meet the centres requirements. Details of suppliers of these stock items are also held along with orders that are placed.
+Storing of the **medical goods** is another problem. A **store manager** who tries to keep the current **stocks** within its best before date runs the store. He also tries to minimise the stock held at any given time while ensuring that there is sufficient stock on hand to meet the centres requirements. Details of **suppliers** of these stock items are also held along with **orders** that are placed.
 
-Every so often the staff attend conferences/training days. This needs to be recorded. Details of the conference/training day need to be stored, along with who attended. Some of the recorded details of these trips include departure date, return date, and times. Also, a record needs to be kept of any expenses incurred by staff on these trips (the expense name, amount and date).
+Every so often the staff attend **conferences/training days**. This needs to be recorded. Details of the conference/training day need to be stored, along with **who attended**. Some of the recorded details of these trips include `departure date`, `return date`, and `times`. Also, a record needs to be kept of any **expenses** incurred by staff on these trips (the expense `name`, `amount` and `date`).
